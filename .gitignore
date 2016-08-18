@@ -1,0 +1,2 @@
+# ignore large files
+roles/xcode/files/Xcode*
