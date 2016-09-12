@@ -31,3 +31,15 @@
   command: installer -pkg /Applications/Xcode.app/Contents/Resources/Packages/MobileDeviceDevelopment.pkg -target /
   become: yes
   become_method: sudo
+
+- name: check on the status of developer mode
+  command: DevToolsSecurity -status
+  become: yes
+  become_method: sudo
+  register: dev_tools_security_status
+
+- name: enable developer mode
+  command: DevToolsSecurity -enable
+  become: yes
+  become_method: sudo
+  when: "'disabled' in dev_tools_security_status.stdout"
