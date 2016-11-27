@@ -1,0 +1,7 @@
+---
+- hosts: osx-standalone.local
+  remote_user: nullgrid
+  vars:
+    xcode_dmg: Xcode_7.3.1.dmg
+  roles:
+    - ansible-role-xcode
