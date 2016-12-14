@@ -17,14 +17,14 @@ get Xcode from the ADC Download section][xcode_download].
 Two things are configurable:
 
 ```yaml
-xcode_version: 8.1
+xcode_version: 8.2
 ```
 
 is the version we're installing. This is important so that we do the correct
 thing for each version of Xcode.
 
 ```yaml
-xcode_src: Xcode_8.1.xip
+xcode_src: Xcode_8.2.xip
 ```
 
 is the file we're copying over (located in a `files/` directory).
@@ -39,7 +39,9 @@ None.
 ```yaml
 - hosts: servers
   roles:
-     - { role: nickcharlton.xcode, xcode_version: 8.2, xcode_src: Xcode.xip }
+     - role: nickcharlton.xcode
+       xcode_version: 8.2
+       xcode_src: Xcode_8.2.xip
 ```
 
 ## License
