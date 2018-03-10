@@ -23,7 +23,7 @@ class XipArchive(object):
         extraction = self._extract_xz_archive(xz_parts[0])
 
         if not extraction:
-            self.module.fail_json("Failed to extract final part of archive.")
+            self.module.fail_json(msg="Failed to extract final part of archive.")
 
         for file_name in (archive_files + xz_parts):
             self.module.add_cleanup_file(file_name)
